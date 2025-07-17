@@ -57,15 +57,19 @@ I’m a third-year Electronics & Instrumentation Engineering student from India,
 📝 Download my resume
 
 🤝 Credits
+
 This portfolio was originally inspired by
 beautiful-react-tailwind-portfolio by Pedro Machado.
 
-It has been heavily customized and modified by Proneil Sengupta
+It has been customized and modified by Proneil Sengupta
 to match my personal projects, style, and vision.
 
 📬 Contact
-📧 Email: proneil.sengupta@gmail.com
+📧 Email: 
+proneil.sengupta@gmail.com
 
-🧑‍💻 GitHub: @ProneilS
+🧑‍💻 GitHub: 
+@ProneilS
 
-🔗 LinkedIn: linkedin.com/in/proneil
+🔗 LinkedIn:
+linkedin.com/in/proneils
