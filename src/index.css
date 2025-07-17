@@ -167,7 +167,7 @@
 
     --border: 217 33% 20%;
   }
-
+  
   * {
     @apply border-border;
   }
