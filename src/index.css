@@ -242,27 +242,26 @@
   text-align: center;
 }
 
-#glitch-cursor {
+.trail-dot {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 18px;
-  height: 18px;
+  width: 10px;
+  height: 10px;
+  background: #00ffff;
   border-radius: 50%;
-  background: white;
-  mix-blend-mode: difference;
-  z-index: 9999;
   pointer-events: none;
+  z-index: 9999;
   transform: translate(-50%, -50%);
-  animation: glitchPulse 0.15s infinite alternate;
+  opacity: 0.8;
+  animation: glitchFade 0.5s ease-out forwards;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 8px #0ff, 0 0 15px #0ff;
 }
 
-@keyframes glitchPulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1.5);
+@keyframes glitchFade {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5) rotate(10deg);
+    filter: blur(2px);
   }
 }
 
