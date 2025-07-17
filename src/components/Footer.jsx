@@ -6,7 +6,7 @@ export const Footer = () => {
       {" "}
       <p className="text-sm text-muted-foreground">
         {" "}
-        &copy; {new Date().getFullYear()} Pedrotech.co. All rights reserved.
+        &copy; {new Date().getFullYear()} Proneil Sengupta
         &copy; {new Date().getFullYear()}{" "}
         <span className="text-sm text-gray-500">
           Crafted in the dark by <span className="font-bold">Proneil</span>
