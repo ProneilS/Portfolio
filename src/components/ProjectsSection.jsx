@@ -3,34 +3,33 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "AI Stethoscope",
+    description: "ESP32-edge AI stethoscope for real-time heart murmur detection.",
+    image: "visualisation.jpeg", // your image file
+    tags: ["ESP32", "TinyML", "Edge AI"],
+    demoUrl: "#", // optional hosted demo
+    githubUrl: "https://github.com/ProneilS/AI-Stethoscope",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
-    description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "YouTube Video: DaVinci & Photoshop",
+    description: "Edited a video in DaVinci Resolve & designed a thumbnail in Photoshop.",
+    image: "https://img.youtube.com/vi/SP6nLwzvuIA/maxresdefault.jpg", // video thumbnail
+    tags: ["DaVinci Resolve", "Photoshop"],
+    demoUrl: "https://www.youtube.com/watch?v=SP6nLwzvuIA",
+    githubUrl: "",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
-    description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
+    title: "Robotic Hand",
+    description: "Gesture-controlled robotic hand with working code and live demo.",
+    image: "/projects/robotic-hand.png", // placeholder until you send
+    tags: ["Robotics", "Servo", "Embedded"],
     demoUrl: "#",
     githubUrl: "#",
   },
 ];
+
 
 export const ProjectsSection = () => {
   return (

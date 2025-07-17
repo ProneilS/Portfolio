@@ -1,4 +1,7 @@
 import { ArrowDown } from "lucide-react";
+import TextScramble from "./TextScramble"; // NOT @/components...
+
+
 
 export const HeroSection = () => {
   return (
@@ -9,23 +12,26 @@ export const HeroSection = () => {
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
-            <span className="text-primary opacity-0 animate-fade-in-delay-1">
-              {" "}
-              Pedro
-            </span>
-            <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">
-              {" "}
-              Machado
-            </span>
-          </h1>
-
+            <span className="opacity-0 animate-fade-in"> Hi, I'm </span>
+            <h1 className="glitch text-4xl sm:text-6xl font-bold " data-text="Proneil Sengupta">
+              Proneil Sengupta
+            </h1>
+          </h1> 
+     <div className="mt-4">
+        <TextScramble texts={["Engineer", "AI Builder", "Innovator", "Developer"]} />
+      </div>
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I create stellar web experiences with modern technologies.
-            Specializing in front-end development, I build interfaces that are
-            both beautiful and functional.
+          I'm an innovator building intelligent systems that push boundaries. 
+          From AI-powered hardware like my stethoscope to immersive sci-fi-inspired interfaces, 
+          I bring code to life. I specialize in embedded systems, edge AI, 
+          and futuristic interfaces — blending engineering precision with creative chaos. 
+          
+          <h1 className="glitch text-4xl sm:text-6xl font-bold " data-text="Let's build what doesn't exist yet.">
+              Let's build what doesn't exist yet.
+            </h1>
           </p>
-
+          
+          
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
             <a href="#projects" className="cosmic-button">
               View My Work

@@ -2,29 +2,33 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const skills = [
-  // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+  // Programming Languages
+  { name: "C", level: 90, category: "backend" },
+  { name: "C++", level: 85, category: "backend" },
+  { name: "Python", level: 88, category: "backend" },
 
-  // Backend
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
+  // Web
+  { name: "HTML/CSS", level: 80, category: "frontend" },
+  { name: "JavaScript", level: 70, category: "frontend" },
 
-  // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  // AI / Embedded Tools
+  { name: "TensorFlow", level: 75, category: "tools" },
+  { name: "MATLAB/Simulink", level: 70, category: "tools" },
+  { name: "Git/GitHub", level: 85, category: "tools" },
+  { name: "VS Code", level: 90, category: "tools" },
+  { name: "Arduino/ESP32", level: 90, category: "tools" },
+
+  // Multimedia
+  { name: "Photoshop", level: 65, category: "tools" },
+  { name: "DaVinci Resolve", level: 60, category: "tools" },
+
+  // Database
+  { name: "MySQL", level: 70, category: "backend" },
 ];
 
 const categories = ["all", "frontend", "backend", "tools"];
+
+
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
