@@ -11,13 +11,18 @@ export const HeroSection = () => {
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            <span className="opacity-0 animate-fade-in"> Hi, I'm 
-            <h1 className="glitch text-4xl sm:text-6xl font-bold " data-text="Proneil Sengupta">
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight opacity-0 animate-fade-in">
+              Hi, I'm
+            </h1>
+
+            <h1
+              className="glitch text-4xl sm:text-6xl font-bold tracking-wide opacity-0 animate-fade-in-delay-2"
+              data-text="Proneil Sengupta"
+            >
               Proneil Sengupta
             </h1>
-            </span>
-          </h1> 
+          </div>
      <div className="mt-4">
         <TextScramble texts={["Engineer", "AI Builder", "Innovator", "Developer"]} />
       </div>
