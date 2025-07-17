@@ -43,8 +43,6 @@ export const Navbar = () => {
     alt="Logo"
     className="w-10 h-10 rounded-full shadow-md hover:rotate-6 transition duration-300"
   />
-  <span className="text-glow text-foreground">Proneil Sengupta</span>
-</a>
 
           <span className="relative z-10">
             <span className="text-glow text-foreground"> Proneil Sengupta </span>{" "}
