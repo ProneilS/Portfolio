@@ -7,7 +7,7 @@ import { GlitchCursor } from "./components/GlitchCursor";
 function App() {
   return (
     <>
-    
+      <GlitchCursor /> {/* Add this line */}
       <Toaster />
       <BrowserRouter>
         <Routes>
@@ -18,5 +18,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
