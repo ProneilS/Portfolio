@@ -3,24 +3,27 @@ import { cn } from "@/lib/utils";
 
 const skills = [
   // Programming Languages
-  { name: "C", level: 90, category: "backend" },
-  { name: "C++", level: 85, category: "backend" },
-  { name: "Python", level: 88, category: "backend" },
+  { name: "C", level: 60, category: "backend" },
+  { name: "C++", level: 80, category: "backend" },
+  { name: "Python", level: 70, category: "backend" },
 
   // Web
-  { name: "HTML/CSS", level: 80, category: "frontend" },
-  { name: "JavaScript", level: 70, category: "frontend" },
+  { name: "HTML/CSS", level: 70, category: "frontend" },
+  { name: "JavaScript", level: 50, category: "frontend" },
 
   // AI / Embedded Tools
   { name: "TensorFlow", level: 75, category: "tools" },
   { name: "MATLAB/Simulink", level: 70, category: "tools" },
   { name: "Git/GitHub", level: 85, category: "tools" },
-  { name: "VS Code", level: 90, category: "tools" },
-  { name: "Arduino/ESP32", level: 90, category: "tools" },
+  { name: "VS Code", level: 80, category: "tools" },
+  { name: "Arduino/ESP32", level: 80, category: "tools" },
 
   // Multimedia
   { name: "Photoshop", level: 65, category: "tools" },
   { name: "DaVinci Resolve", level: 60, category: "tools" },
+  { name: "Unreal Engine 4", level: 50, category: "tools" },
+  { name: "Blueprint Visual Scripting and level design", level: 50, category: "tools" },
+
 
   // Database
   { name: "MySQL", level: 70, category: "backend" },
