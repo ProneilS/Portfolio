@@ -17,7 +17,7 @@ export const HeroSection = () => {
             </h1>
 
             <h1
-              className="glitch text-4xl sm:text-6xl font-bold tracking-wide opacity-0 animate-fade-in-delay-2"
+              className="glitch text-4xl sm:text-6xl font-bold tracking-wide opacity-0 animate-fade-in"
               data-text="Proneil Sengupta"
             >
               Proneil Sengupta
