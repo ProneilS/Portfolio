@@ -34,16 +34,6 @@ export const Navbar = () => {
           className="text-xl font-bold text-primary flex items-center"
           href="#hero"
         >
-          <a
-  className="flex items-center space-x-3 text-xl font-bold text-primary"
-  href="#hero"
->
-  <img
-    src="/vite.svg"
-    alt="Logo"
-    className="w-10 h-10 rounded-full shadow-md hover:rotate-6 transition duration-300"
-  />
-
           <span className="relative z-10">
             <span className="text-glow text-foreground"> Proneil Sengupta </span>{" "}
             Portfolio
