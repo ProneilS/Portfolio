@@ -241,3 +241,27 @@
   padding: 0;
   text-align: center;
 }
+
+.trail-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #00ffff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+  animation: glitchFade 0.5s ease-out forwards;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 8px #0ff, 0 0 15px #0ff;
+}
+
+@keyframes glitchFade {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5) rotate(10deg);
+    filter: blur(2px);
+  }
+}
+
