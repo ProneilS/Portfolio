@@ -1,35 +1,25 @@
 import { useEffect } from "react";
 
-export const GlitchCursor = () => {
+const GlitchCursor = () => {
   useEffect(() => {
-    const trail = [];
+    const cursor = document.createElement("div");
+    cursor.id = "glitch-cursor";
+    document.body.appendChild(cursor);
 
-    const createDot = (x, y) => {
-      const dot = document.createElement("div");
-      dot.className = "trail-dot";
-      dot.style.left = `${x}px`;
-      dot.style.top = `${y}px`;
-      document.body.appendChild(dot);
-
-      trail.push(dot);
-      if (trail.length > 20) {
-        const oldDot = trail.shift();
-        oldDot.remove();
-      }
-
-      setTimeout(() => dot.remove(), 500); // how long the dot stays
+    const moveCursor = (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
     };
 
-    const handleMouseMove = (e) => {
-      createDot(e.clientX, e.clientY);
-    };
+    document.addEventListener("mousemove", moveCursor);
 
-    window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      trail.forEach(dot => dot.remove());
+      document.removeEventListener("mousemove", moveCursor);
+      cursor.remove();
     };
   }, []);
 
   return null;
 };
+
+export default GlitchCursor;
