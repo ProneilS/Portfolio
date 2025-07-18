@@ -60,10 +60,17 @@ const TextScramble = ({ texts, speed = 80 }) => {
   }, [texts]);
 
   return (
-    <span ref={textRef} className="font-bold text-white text-3xl sm:text-4xl md:text-5xl">
-      {currentText}
-    </span>
-  );
+
+  <span
+    ref={textRef}
+    className="glitch font-bold text-glow text-3xl sm:text-4xl md:text-5xl"
+    data-text={currentText}
+    style={{ color: "hsl(var(--foreground))" }}
+  >
+    <span>{currentText}</span>
+  </span>
+);
+
 };
 
 export default TextScramble;

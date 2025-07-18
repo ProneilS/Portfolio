@@ -3,10 +3,11 @@
 .glitch {
   position: relative;
   display: inline-block;
-  color: #fff;
   font-weight: bold;
+  color: hsl(var(--foreground)); /* dynamically adapts to theme */
   animation: glitch-skew 1s infinite linear alternate-reverse;
 }
+
 
 .glitch::before,
 .glitch::after {
