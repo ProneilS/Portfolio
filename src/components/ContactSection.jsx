@@ -5,6 +5,7 @@ import {
   Phone,
   Send,
   Github,
+  Loader2 // Added back for loading state
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -13,19 +14,75 @@ import { useState } from "react";
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
 
-  const handleSubmit = (e) => {
+  // Use environment variable for API URL
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+    try {
+      // Basic validation
+      if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+        toast({
+          title: "Validation Error",
+          description: "Please fill in all fields.",
+          variant: "destructive"
+        });
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Send to backend
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast({
+          title: "Message sent!",
+          description: data.message || "Thank you for your message. I'll get back to you soon.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          message: ""
+        });
+      } else {
+        throw new Error(data.message || "Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -115,14 +172,12 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div
-            className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
-          >
+          {/* RIGHT SIDE - FORM */}
+          <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
-            <form className="space-y-6">
+            {/* Moved onSubmit to form element */}
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Your Name
@@ -131,7 +186,10 @@ export const ContactSection = () => {
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="Proneil Sengupta..."
                 />
@@ -145,7 +203,10 @@ export const ContactSection = () => {
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="john@gmail.com"
                 />
@@ -158,7 +219,11 @@ export const ContactSection = () => {
                 <textarea
                   id="message"
                   name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   required
+                  disabled={isSubmitting}
+                  rows={5}
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                   placeholder="Hello, I'd like to talk about..."
                 />
@@ -167,10 +232,22 @@ export const ContactSection = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="cosmic-button w-full flex items-center justify-center gap-2"
+                className={cn(
+                  "w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center space-x-2",
+                  "disabled:opacity-50 disabled:cursor-not-allowed"
+                )}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <Send size={16} />
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>Send Message</span>
+                  </>
+                )}
               </button>
             </form>
           </div>
