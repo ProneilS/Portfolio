@@ -23,7 +23,7 @@ const projects = [
     id: 3,
     title: "Robotic Hand",
     description: "Gesture-controlled robotic hand with working code and live demo.",
-    image: "/projects/robotic-hand.png", // placeholder until you send
+    image: "/projects/robothand.jpeg", // placeholder until you send
     tags: ["Robotics", "Servo", "Embedded"],
     demoUrl: "#",
     githubUrl: "#",
