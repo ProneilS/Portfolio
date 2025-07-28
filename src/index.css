@@ -8,6 +8,16 @@
   animation: glitch-skew 1s infinite linear alternate-reverse;
 }
 
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background: purple;       /* Changed from #2680eb (blue) to purple */
+  z-index: 9999;
+  transition: width 0.2s ease;
+}
 
 .glitch::before,
 .glitch::after {
