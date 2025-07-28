@@ -10,24 +10,5 @@
     <div id="scroll-progress"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const progressBar = document.getElementById('scroll-progress');
-
-        function updateProgressBar() {
-          const scrollPosition = window.scrollY;
-          const windowHeight = window.innerHeight;
-          const documentHeight = document.documentElement.scrollHeight;
-
-          let progress = (scrollPosition / (documentHeight - windowHeight)) * 100;
-          progress = Math.min(progress, 100); // clamp max at 100%
-          progressBar.style.width = progress + '%';
-        }
-
-        window.addEventListener('scroll', updateProgressBar);
-        updateProgressBar(); // Initial update
-      });
-    </script>
   </body>
 </html>

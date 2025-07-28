@@ -2,12 +2,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { Toaster } from "@/components/ui/toaster";
-import {GlitchCursor} from "./components/GlitchCursor";
+import { GlitchCursor } from "./components/GlitchCursor";
+import ScrollProgress from "./ScrollProgress";  // import the component
 
 function App() {
   return (
     <>
-      <GlitchCursor /> {/* Add this line */}
+      <ScrollProgress />  {/* Add this line here */}
+      <GlitchCursor />
       <Toaster />
       <BrowserRouter>
         <Routes>
@@ -18,6 +20,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;
