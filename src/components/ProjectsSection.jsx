@@ -29,7 +29,7 @@ const projects = [
     githubUrl: "#",
   },
   {
-  id: ,
+  id: 4,
   title: "Flappy Bird Clone",
   description: "A browser-based remake of Flappy Bird using vanilla JS and HTML5 Canvas.",
   image: "flappy-thumbnail.jpg", // Add a screenshot of gameplay
